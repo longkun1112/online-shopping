@@ -34,29 +34,6 @@ const Home = () => {
                 auto={false}
                 timeOut={5000}
             />
-            {/* end hero slider */}
-
-            {/* policy section */}
-            <Section>
-                <SectionBody>
-                    <Grid
-                        col={4}
-                        mdCol={2}
-                        smCol={1}
-                        gap={20}
-                    >
-                        {
-                            policy.map((item, index) => <Link key={index} to="/policy">
-                                <PolicyCard
-                                    name={item.name}
-                                    description={item.description}
-                                    icon={item.icon}
-                                />
-                            </Link>)
-                        }
-                    </Grid>
-                </SectionBody>
-            </Section>
            
             <Section>
                 <SectionTitle>

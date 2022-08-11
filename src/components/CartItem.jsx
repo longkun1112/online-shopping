@@ -6,6 +6,8 @@ import { updateItem, removeItem } from '../redux/shopping-cart/cartItemsSlide'
 
 import numberWithCommas from '../utils/numberWithCommas'
 import { Link } from 'react-router-dom'
+const product_01_image_01 = require('../assets/images/products/product-01 (1).jpg').default
+
 
 const CartItem = props => {
 
@@ -42,12 +44,12 @@ const CartItem = props => {
     return (
         <div className="cart__item" ref={itemRef}>
             <div className="cart__item__image">
-                <img src={item.product.image01} alt="" />
+                <img src={item.product?.image01 ? item.product?.image01 : product_01_image_01} alt="" />
             </div>
             <div className="cart__item__info">
                 <div className="cart__item__info__name">
                     <Link to={`/catalog/${item.slug}`}>
-                        {`${item.product.title} - ${item.color} - ${item.size}`}
+                        {`${item.product?.title ? item.product?.title : "Sản phẩm"} - ${item.color} - ${item.size}`}
                     </Link>
                 </div>
                 <div className="cart__item__info__price">
